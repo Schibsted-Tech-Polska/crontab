@@ -1,0 +1,26 @@
+{
+    "name": "schibsted-tech-polska/crontab",
+    "description": "Crontab",
+    "keywords": [
+        "crontab"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Crontab\\": "src/Crontab/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Crontab\\Tests\\": "tests/Crontab/"
+        }
+    },
+    "require": {
+        "php": "^5.5 || >=7.0",
+
+        "hashids/hashids": "^1.0",
+        "mtdowling/cron-expression": "^1.1",
+        "psr/cache": "^1.0",
+        "psr/cache-implementation": "^1.0"
+    }
+}
