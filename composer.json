@@ -22,5 +22,8 @@
         "mtdowling/cron-expression": "^1.1",
         "psr/cache": "^1.0",
         "psr/cache-implementation": "^1.0"
+    },
+    "suggest": {
+        "cache/*-adapter": "An actual implementation of PSR-6 cache"
     }
 }
