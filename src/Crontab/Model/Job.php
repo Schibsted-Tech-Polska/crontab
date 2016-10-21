@@ -2,6 +2,7 @@
 
 namespace Crontab\Model;
 
+use DateInterval;
 use DateTime;
 use Hashids\Hashids;
 
@@ -339,6 +340,26 @@ class Job
         }
 
         return $status;
+    }
+
+    /**
+     * Get duration
+     *
+     * @return DateInterval|null
+     */
+    public function getDuration()
+    {
+        if (($this->getStartedAt() !== null) && ($this->getEndedAt() !== null) &&
+            ($this->getEndedAt() >= $this->getStartedAt())
+        ) {
+            $duration = $this->getEndedAt()
+                ->diff($this->getStartedAt())
+            ;
+        } else {
+            $duration = null;
+        }
+
+        return $duration;
     }
 
     /**
