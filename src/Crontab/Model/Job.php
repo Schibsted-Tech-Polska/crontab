@@ -345,8 +345,6 @@ class Job
     /**
      * Get duration
      *
-     * @param DateTime $endedAt ended at
-     *
      * @return DateInterval|null
      */
     public function getDuration($endedAt = null)
