@@ -345,16 +345,24 @@ class Job
     /**
      * Get duration
      *
+     * @param DateTime $endedAt ended at
+     *
      * @return DateInterval|null
      */
-    public function getDuration()
+    public function getDuration($endedAt = null)
     {
-        if (($this->getStartedAt() !== null) && ($this->getEndedAt() !== null) &&
-            ($this->getEndedAt() >= $this->getStartedAt())
-        ) {
-            $duration = $this->getEndedAt()
-                ->diff($this->getStartedAt())
-            ;
+        if ($endedAt === null) {
+            $endedAt = new DateTime();
+        }
+
+        if ($this->getStartedAt() !== null) {
+            if ($this->getEndedAt() >= $this->getStartedAt()) {
+                $duration = $this->getEndedAt()
+                    ->diff($this->getStartedAt())
+                ;
+            } else {
+                $duration = $endedAt->diff($this->getStartedAt());
+            }
         } else {
             $duration = null;
         }
