@@ -16,6 +16,7 @@
         }
     },
     "require": {
+        "ext-bcmath": "*",
         "php": "^5.5 || >=7.0",
 
         "hashids/hashids": "^1.0",
